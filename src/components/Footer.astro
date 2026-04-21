@@ -38,18 +38,38 @@ const email = "mailto:beniciobraunstein@gmail.com";
       </a>
       
       <button
-        onclick={`navigator.clipboard.writeText('${email.replace('mailto:', '')}').then(() => alert('Email copiado: beniciobraunstein@gmail.com'))`}
-        class="flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-slate-800 to-slate-900 text-white rounded-2xl font-semibold hover:from-emerald-500 hover:to-purple-600 hover:shadow-lg hover:shadow-purple-500/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+        id="email-btn"
+        data-email="beniciobraunstein@gmail.com"
+        class="email-btn group flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-slate-800 to-slate-900 text-white rounded-2xl font-semibold hover:from-emerald-500 hover:to-emerald-600 hover:shadow-lg hover:shadow-emerald-500/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
           <path d="M0 3v18h24V3H0zm21.5 1.5l-7.5 5.625-7.5-5.625V5.207l7.5 5.625 7.5-5.625V4.707zM2 20.5v-13.207l7.5 5.625 7.5-5.625V20.5H2z"/>
         </svg>
-        Email
+        <span>Email</span>
       </button>
     </div>
     
     <p class="text-center text-sm text-slate-400 mt-12">
-      © 2025 Benicio Braunstein. Todos los derechos reservados.
+      © 2026 Benicio Braunstein. Todos los derechos reservados.
     </p>
   </div>
 </footer>
+
+<script>
+  document.querySelector('.email-btn')?.addEventListener('click', function() {
+    const email = this.getAttribute('data-email');
+    const btn = this;
+    navigator.clipboard.writeText(email).then(() => {
+      const span = btn.querySelector('span');
+      const originalText = span.textContent;
+      span.textContent = '✓ Copiado!';
+      btn.classList.remove('from-slate-800', 'to-slate-900');
+      btn.classList.add('from-emerald-500', 'to-emerald-600');
+      setTimeout(() => {
+        span.textContent = originalText;
+        btn.classList.add('from-slate-800', 'to-slate-900');
+        btn.classList.remove('from-emerald-500', 'to-emerald-600');
+      }, 2000);
+    });
+  });
+</script>

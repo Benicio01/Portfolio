@@ -34,7 +34,7 @@ async function getRepositories(): Promise<Repository[]> {
 
 const repositories = await getRepositories();
 
-const projectMeta: Record<string, { title: string; description: string; year: string }> = {
+const projectMeta: Record<string, { title: string; description: string; year: string; language?: string }> = {
   "Proyecto-Redes-Firewall": {
     title: "Firewall de red (Python)",
     description: "Implementación de un firewall a nivel de red con reglas configurables de filtrado de paquetes, desarrollado en Python sobre sockets raw.",
@@ -59,6 +59,12 @@ const projectMeta: Record<string, { title: string; description: string; year: st
     title: "Motor SQL en Rust",
     description: "Motor de base de datos relacional básico implementado en Rust desde cero, con soporte para SELECT, INSERT, WHERE y manejo de archivos CSV.",
     year: "2024"
+  },
+  "Portfolio": {
+    title: "Portfolio Personal",
+    description: "Portfolio personal desarrollado con Astro y Tailwind CSS. Muestra proyectos desde GitHub, información profesional y datos de contacto.",
+    year: "2026",
+    language: "Astro"
   },
 };
 ---
@@ -85,7 +91,7 @@ const projectMeta: Record<string, { title: string; description: string; year: st
                 customTitle={projectMeta[repo.name]?.title}
                 customDescription={projectMeta[repo.name]?.description}
                 year={projectMeta[repo.name]?.year}
-                language={repo.language}
+                language={projectMeta[repo.name]?.language || repo.language}
                 url={repo.html_url}
                 stars={repo.stargazers_count}
                 forks={repo.forks_count}
