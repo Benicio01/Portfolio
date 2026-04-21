@@ -34,33 +34,32 @@ const repositories = await getRepositories();
 ---
 
 <Layout title="Benicio Braunstein - Portfolio">
-  <Hero />
-  
-  <section id="proyectos" class="py-8 px-6 pb-16">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-semibold mb-6 flex items-center gap-3">
-        <span class="w-8 h-1 bg-accent rounded-full"></span>
-        Proyectos
-      </h2>
-      
-      {repositories.length > 0 ? (
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {repositories.map((repo) => (
-            <ProjectCard
-              name={repo.name}
-              description={repo.description}
-              language={repo.language}
-              url={repo.html_url}
-              stars={repo.stargazers_count}
-              forks={repo.forks_count}
-            />
-          ))}
-        </div>
-      ) : (
-        <p class="text-muted">No se encontraron proyectos.</p>
-      )}
-    </div>
-  </section>
+  <main>
+    <Hero />
+    
+    <section id="proyectos" class="py-16 px-6 pb-16">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold text-slate-900 mb-8">Proyectos</h2>
+        
+        {repositories.length > 0 ? (
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {repositories.map((repo) => (
+              <ProjectCard
+                name={repo.name}
+                description={repo.description}
+                language={repo.language}
+                url={repo.html_url}
+                stars={repo.stargazers_count}
+                forks={repo.forks_count}
+              />
+            ))}
+          </div>
+        ) : (
+          <p class="text-slate-500">No se encontraron proyectos.</p>
+        )}
+      </div>
+    </section>
+  </main>
   
   <Footer />
 </Layout>

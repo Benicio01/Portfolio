@@ -4,18 +4,22 @@ const linkedin = "https://www.linkedin.com/in/benicio-braunstein-419913352";
 const email = "mailto:beniciobraunstein@gmail.com";
 ---
 
-<footer class="py-12 px-6 mt-auto border-t border-gray-100">
+<footer class="py-16 px-6 mt-auto bg-white/50 backdrop-blur-sm border-t border-slate-200">
   <div class="max-w-4xl mx-auto">
-    <h2 class="text-xl font-semibold mb-6 text-center">Contacto</h2>
+    <div class="flex items-center justify-center gap-4 mb-10">
+      <div class="w-16 h-1 bg-gradient-to-r from-emerald-400 to-purple-500 rounded-full"></div>
+      <h2 class="text-2xl font-bold text-slate-900">Contacto</h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-emerald-400 rounded-full"></div>
+    </div>
     
-    <div class="flex justify-center gap-6">
+    <div class="flex flex-wrap justify-center gap-4">
       <a
         href={github}
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-gray-100 hover:border-accent hover:text-accent transition-all duration-200"
+        class="flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-slate-800 to-slate-900 text-white rounded-2xl font-semibold hover:from-emerald-500 hover:to-emerald-600 hover:shadow-lg hover:shadow-emerald-500/30 hover:-translate-y-1 transition-all duration-300"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-4.005-.75-4.005-.75-.54-1.38-1.335-1.755-1.335-1.755-1.095-.75.09-.735.09-.735.605.09 1.92.63 2.61.45.12-.585.24-1.23.42-1.5-1.785-.195-3.66-.885-3.66-3.945 0-.87.315-1.59.825-2.15-.09-.21-.36-.855.075-2.145 0 0 .69-.225 2.22.645A6.335 6.335 0 0112 6.12c.585.005 1.17.09 1.725.09 1.53 0 2.22.645 2.22.645 1.53 1.335 2.22.93 2.22 2.145 0 2.07-.66 3.755-3.69 3.945.45.39.75 1.14.75 2.31 0 1.665-1.335 2.91-3.18 2.91-2.22 0-3.405-1.65-3.405-3.75 0-1.05.405-1.92.915-2.565-.105-.27-.42-1.35.09-2.85 0 0 .735-.255 2.61.45 1.56-.42 3.24-.42 4.53-.42s2.97 0 4.53.42c1.875-.705 2.61-.45 2.61-.45.51 1.5.195 2.58.09 2.85.51.645.915 1.515.915 2.565 0 2.1-1.185 3.75-3.405 3.75 2.475 1.455 3.825 2.1 3.825 4.545 0 3.285-2.625 6.015-6.195 6.015-4.395 0-7.625-3.195-7.625-7.625 0-1.635.6-3.105.595-3.105-.54-.255-1.065-.795-.06-1.83 0 0 1.125-.39 2.025.63a6.745 6.745 0 012.115-.045c2.01.105 4.005.645 4.005 4.005 0 2.685-1.74 4.5-4.035 4.5-2.34 0-4.245-1.365-4.245-3.105 0-1.17.45-2.085 1.095-2.625-.12-.285-.15-1.005-.06-1.515 1.155-.39 2.34-.855 2.34-2.175V3.195c-.735.285-1.44.48-2.22.48-.78 0-1.545-.195-2.22-.48-.39 1.26-.39 2.61 0 4.005.285.255.525.585.525.915-.015.015-.015.015-.015.03-.015.15-.015.285-.015.42 0 1.32 1.365 1.785 2.34 2.175 1.155.45 2.34-.135 2.34-.135"/>
         </svg>
         GitHub
@@ -25,9 +29,9 @@ const email = "mailto:beniciobraunstein@gmail.com";
         href={linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-gray-100 hover:border-accent hover:text-accent transition-all duration-200"
+        class="flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-slate-800 to-slate-900 text-white rounded-2xl font-semibold hover:from-blue-600 hover:to-blue-700 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
         </svg>
         LinkedIn
@@ -35,16 +39,16 @@ const email = "mailto:beniciobraunstein@gmail.com";
       
       <a
         href={email}
-        class="flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-gray-100 hover:border-accent hover:text-accent transition-all duration-200"
+        class="flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-slate-800 to-slate-900 text-white rounded-2xl font-semibold hover:from-emerald-500 hover:to-purple-600 hover:shadow-lg hover:shadow-purple-500/30 hover:-translate-y-1 transition-all duration-300"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
           <path d="M0 3v18h24V3H0zm21.5 1.5l-7.5 5.625-7.5-5.625V5.207l7.5 5.625 7.5-5.625V4.707zM2 20.5v-13.207l7.5 5.625 7.5-5.625V20.5H2z"/>
         </svg>
         Email
       </a>
     </div>
     
-    <p class="text-center text-sm text-muted mt-8">
+    <p class="text-center text-sm text-slate-400 mt-12">
       © 2025 Benicio Braunstein. Todos los derechos reservados.
     </p>
   </div>
