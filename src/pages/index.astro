@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
+import Education from '../components/Education.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import Footer from '../components/Footer.astro';
 
@@ -31,22 +33,58 @@ async function getRepositories(): Promise<Repository[]> {
 }
 
 const repositories = await getRepositories();
+
+const projectMeta: Record<string, { title: string; description: string; year: string }> = {
+  "Proyecto-Redes-Firewall": {
+    title: "Firewall de red (Python)",
+    description: "Implementación de un firewall a nivel de red con reglas configurables de filtrado de paquetes, desarrollado en Python sobre sockets raw.",
+    year: "2024"
+  },
+  "Protocolo-RDT": {
+    title: "Protocolo RDT sobre UDP",
+    description: "Implementación del protocolo RDT (Reliable Data Transfer) con control de flujo y manejo de errores sobre UDP, simulando pérdida de paquetes y timeouts.",
+    year: "2024"
+  },
+  "Fork-Join": {
+    title: "Framework Fork-Join en Rust",
+    description: "Framework de paralelismo Fork-Join en Rust, con thread pool propio y división recursiva de tareas, sin usar librerías externas de concurrencia.",
+    year: "2024"
+  },
+  "Proyecto-Final-Concurrencia-Distribuida": {
+    title: "Sistema Distribuido Concurrente",
+    description: "Sistema distribuido en Rust con múltiples actores concurrentes, manejo de estado compartido y tolerancia a fallos.",
+    year: "2024"
+  },
+  "SQL-Rustico": {
+    title: "Motor SQL en Rust",
+    description: "Motor de base de datos relacional básico implementado en Rust desde cero, con soporte para SELECT, INSERT, WHERE y manejo de archivos CSV.",
+    year: "2024"
+  },
+};
 ---
 
 <Layout title="Benicio Braunstein - Portfolio">
+  <Navbar />
+  
   <main>
     <Hero />
+    <Education />
     
     <section id="proyectos" class="py-16 px-6 pb-16">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl font-bold text-slate-900 mb-8">Proyectos</h2>
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-16 h-1 bg-gradient-to-r from-emerald-400 to-purple-500 rounded-full"></div>
+          <h2 class="text-3xl font-bold text-slate-900">Proyectos</h2>
+        </div>
         
         {repositories.length > 0 ? (
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             {repositories.map((repo) => (
               <ProjectCard
                 name={repo.name}
-                description={repo.description}
+                customTitle={projectMeta[repo.name]?.title}
+                customDescription={projectMeta[repo.name]?.description}
+                year={projectMeta[repo.name]?.year}
                 language={repo.language}
                 url={repo.html_url}
                 stars={repo.stargazers_count}

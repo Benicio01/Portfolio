@@ -4,7 +4,7 @@ const linkedin = "https://www.linkedin.com/in/benicio-braunstein-419913352";
 const email = "mailto:beniciobraunstein@gmail.com";
 ---
 
-<footer class="py-16 px-6 mt-auto bg-white/50 backdrop-blur-sm border-t border-slate-200">
+<footer id="contacto" class="py-16 px-6 mt-auto bg-white/50 backdrop-blur-sm border-t border-slate-200">
   <div class="max-w-4xl mx-auto">
     <div class="flex items-center justify-center gap-4 mb-10">
       <div class="w-16 h-1 bg-gradient-to-r from-emerald-400 to-purple-500 rounded-full"></div>
@@ -37,15 +37,15 @@ const email = "mailto:beniciobraunstein@gmail.com";
         LinkedIn
       </a>
       
-      <a
-        href={email}
-        class="flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-slate-800 to-slate-900 text-white rounded-2xl font-semibold hover:from-emerald-500 hover:to-purple-600 hover:shadow-lg hover:shadow-purple-500/30 hover:-translate-y-1 transition-all duration-300"
+      <button
+        onclick={`navigator.clipboard.writeText('${email.replace('mailto:', '')}').then(() => alert('Email copiado: beniciobraunstein@gmail.com'))`}
+        class="flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-slate-800 to-slate-900 text-white rounded-2xl font-semibold hover:from-emerald-500 hover:to-purple-600 hover:shadow-lg hover:shadow-purple-500/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
           <path d="M0 3v18h24V3H0zm21.5 1.5l-7.5 5.625-7.5-5.625V5.207l7.5 5.625 7.5-5.625V4.707zM2 20.5v-13.207l7.5 5.625 7.5-5.625V20.5H2z"/>
         </svg>
         Email
-      </a>
+      </button>
     </div>
     
     <p class="text-center text-sm text-slate-400 mt-12">

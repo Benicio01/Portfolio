@@ -1,5 +1,5 @@
 ---
-const sobreMi = `Soy estudiante de Ingeniería en Informática en la UBA, apasionado por el desarrollo de software y la resolución de problemas complejos. A lo largo de mi formación, he consolidado bases sólidas trabajando en proyectos integrales. En el backend tengo experiencia con Python, Rust, Java y bases de datos SQL —diseñando protocolos, microservicios y sistemas concurrentes—, mientras que en el frontend he desarrollado interfaces interactivas utilizando JavaScript y React.
+const sobreMi = `Soy estudiante de Ingeniería en Informática en la UBA, apasionado por el desarrollo de software y la resolución de problemas complejos. A lo largo de mi formación, he consolidado bases sólidas trabajando en proyectos integrales. En el backend tengo experiencia con Python, Rust, Java y bases de datos SQL —diseñando protocolos como el RDT sobre UDP, el sistema de Concurrencia Distribuida, y el framework Fork-Join en Rust—, mientras que en el frontend he desarrollado interfaces interactivas utilizando JavaScript y React.
 Mi enfoque principal hoy es dar el salto al entorno corporativo: tengo muchas ganas de integrarme a un equipo donde pueda sumar valor desde el primer día, absorber buenas prácticas de la industria y crecer profesionalmente trabajando en productos completos junto a otros desarrolladores.`;
 
 const technologies = [
@@ -10,9 +10,18 @@ const technologies = [
   { name: "React", color: "#61DAFB" },
   { name: "JavaScript", color: "#F7DF1E" },
 ];
+
+const tools = [
+  { name: "Git", color: "#F05032" },
+  { name: "Linux", color: "#FCC624" },
+  { name: "Docker", color: "#2496ED" },
+  { name: "VS Code", color: "#007ACC" },
+  { name: "PostgreSQL", color: "#336791" },
+  { name: "Node.js", color: "#339933" },
+];
 ---
 
-<section class="relative overflow-hidden">
+<section id="inicio" class="relative overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-br from-emerald-200/40 via-purple-100/30 to-emerald-100/20"></div>
   <div class="absolute top-20 right-10 w-72 h-72 bg-emerald-400/20 rounded-full blur-3xl"></div>
   <div class="absolute bottom-10 left-10 w-48 h-48 bg-purple-400/20 rounded-full blur-2xl"></div>
@@ -42,22 +51,38 @@ const technologies = [
           Estudiante de Ingeniería en Informática - UBA
         </p>
         
-        <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-          {technologies.map((tech, i) => (
-            <span 
-              class="px-4 py-2 bg-white/80 backdrop-blur-sm border-2 rounded-full text-sm font-semibold text-slate-700 hover:bg-emerald-500 hover:text-white hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 cursor-default"
-              style={{ borderColor: tech.color, animationDelay: `${i * 100}ms` }}
-            >
-              {tech.name}
-            </span>
-          ))}
+        <div class="mb-4">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 text-left">Lenguajes</p>
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+            {technologies.map((tech, i) => (
+              <span 
+                class="px-4 py-2 bg-white/80 backdrop-blur-sm border-2 border-transparent rounded-full text-sm font-semibold text-slate-700 hover:border-current hover:shadow-lg transition-all duration-300 cursor-default"
+                style={{ color: tech.color }}
+              >
+                {tech.name}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        <div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 text-left">Herramientas</p>
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+            {tools.map((tool, i) => (
+              <span 
+                class="px-4 py-2 bg-slate-50 border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:bg-slate-100 hover:border-slate-300 transition-all duration-300 cursor-default"
+              >
+                {tool.name}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="py-12 px-6">
+<section id="sobre-mi" class="py-12 px-6">
   <div class="max-w-4xl mx-auto">
     <div class="flex items-center gap-4 mb-8">
       <div class="w-16 h-1 bg-gradient-to-r from-emerald-400 to-purple-500 rounded-full"></div>
